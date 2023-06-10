@@ -27,7 +27,7 @@ public class ClientTokenSettings {
     private Integer id;
 
     @Column(name = "time_to_live_in_hours")
-    private Integer timeToLiveInHours;
+    private Long timeToLiveInHours;
 
     @Column(name = "format")
     private String tokenFormat;
