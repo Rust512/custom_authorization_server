@@ -37,7 +37,7 @@ public class ApplicationSecurityConfig {
 
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder encoder) {
-        // For initial testing purposes, I am
+        // For initial testing purposes, I am using in-memory user details manager. This will be later managed by jpa.
         var user = User.withUsername("default")
                 .password(encoder.encode("default"))
                 .authorities("read")
