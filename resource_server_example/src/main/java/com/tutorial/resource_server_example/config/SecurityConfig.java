@@ -1,5 +1,6 @@
 package com.tutorial.resource_server_example.config;
 
+import com.tutorial.resource_server_example.converter.CustomJwtAuthenticationTokenConverter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,6 +14,7 @@ public class SecurityConfig {
         http.oauth2ResourceServer(
                 resourceServer -> resourceServer.jwt(
                         jwtConfig -> jwtConfig.jwkSetUri("http://localhost:8080/oauth2/jwks")
+                                .jwtAuthenticationConverter(new CustomJwtAuthenticationTokenConverter())
                 )
         );
 
